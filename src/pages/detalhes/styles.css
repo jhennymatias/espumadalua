@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+
+.body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-produto .header nav{
+    background-color: black;
+    color: white;
+    max-width: 100%;
+    height: 7rem;
+}
+
+.container-produto .header nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container-produto .header nav img{
+    height: 6rem;
+    width: 6rem;
+    margin-left: 3rem;
+}
+
+.container-produto .header nav .itens a{
+    text-decoration: none;
+    color: white;
+    margin-left: 1rem;
+}
+
+.container-produto .header nav .itens a+a+a{
+    margin-right: 3rem;
+}
+
+.container-produto .titulo{
+    font-family: 'Playfair Display', serif;
+    font-size: 4.5rem;
+    color: black;
+    width: 100%;
+    display: flex;
+    margin-top: 3rem;
+    margin-bottom: 7rem;
+}
+
+.container-produto .produto-header{
+    display: flex;
+    justify-content: space-between;
+    margin: 7rem
+}
+
+.container-produto .produto-header img{
+    width: 45rem;
+    height: 45rem;
+    border-radius: 8px;
+    margin-top: 3rem;
+}
+
+.container-produto .produto-header .descricao{
+    margin-left: 5rem;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin-right: 3rem;
+}
+
+.container-produto .produto-header .descricao .detalhes{
+    text-align: justify;
+    line-height: 1.4;
+}
+
+.container-produto .produto-header .descricao .desc{
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
+.container-produto .produto-header .descricao .row-final{
+    display: flex;
+    justify-content: space-between;
+    font-size: 4rem;
+    margin-top: 5rem;
+}
+
+
+.container-produto .produto-header .descricao .row-final .rede-sociais{
+    display: flex;
+    flex-direction: row;
+    margin-right: 2rem;
+}
+
+.container-produto .produto-header .descricao .row-final .rede-sociais p+p{
+    margin-left: 2rem;
+}
+
+.container-produto .beneficios{
+    color:black;
+    margin: 7rem;
+    text-align: justify;
+    margin-right: 10rem;
+}
+
+.container-produto .beneficios .ben{
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+    line-height: 1.4;
+}
+
+.container-produto .similares{
+    color:black;
+    margin: 7rem;
+    text-align: justify;
+    margin-right: 10rem;
+}
+
+.container-produto .similares .simi{
+    margin-bottom: 4rem;
+    font-size: 2.5rem;
+}
+
+.container-produto .similares .imagens{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.container-produto .similares .imagens .produto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    margin-bottom: 3rem;
+    padding-top: 1rem;
+}
+
+.container-produto .similares .imagens .produto:hover{
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+}
+.container-produto .similares .imagens a .produto .descricao{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;    
+}
+.container-produto .similares .imagens .produto img{
+    height: 25rem;
+    width: 25rem;
+    border-radius: 8px;
+}
+
+.container-produto footer{
+    display: flex;
+    justify-content: center;
+    height: 5rem;
+    background-color: black;
+    width: 100%;
+    align-items: center;
+    color: white;
+    position: absolute;
+    margin-bottom: 0;
+}
+

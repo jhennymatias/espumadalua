@@ -1,0 +1,73 @@
+.body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+.container-senha{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #E2D8F6;
+}
+
+.container-senha .forms{
+    background-color: #E2D8F6;
+    width: 50%;
+    height: 100vh;
+    margin-right: 0;
+    margin-left: 3rem;
+}
+
+.container-senha .forms h1{
+    color: black;
+    display:flex;
+    justify-content: center;
+    font-size: 3.2rem;
+}
+
+.container-senha .forms form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+.container-senha .forms form input{
+    margin-bottom: 1rem;
+}
+
+.container-senha .forms form  .btn-enviar{
+    background-color: black;
+    color: white;
+}
+.container-senha .forms form  .btn-enviar:hover{
+    background-color: rgb(51, 50, 50);
+}
+
+.container-senha .forms form .links{
+    margin-top: 10rem;
+}
+.container-senha .forms form a{
+    color: gray;
+    display: flex;
+    justify-content:center;
+    font-weight: 0;
+    font-size: 1.4rem;
+}
+
+.container-senha .forms .descricao{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    color: gray;
+}
+

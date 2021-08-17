@@ -1,0 +1,87 @@
+.body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+.container-cadastro{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E2D8F6;
+}
+
+.container-cadastro .img-cadastro {
+    max-height: 100vh;
+    width: 50%;
+    margin-right: 0;
+}
+
+.container-cadastro .forms{
+    background-color: #E2D8F6;
+    width: 50%;
+    height: 100vh;
+    margin-right: 0;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.container-cadastro .forms h1{
+    color: black;
+    display:flex;
+    justify-content: center;
+    font-size: 3.2rem;
+}
+
+.container-cadastro .forms form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.container-cadastro .forms form input{
+    margin-bottom: 1rem;
+}
+
+.container-cadastro .forms form .btn-criar{
+    background-color: black;
+    color: white;
+}
+
+.container-cadastro .forms form .btn-criar:hover{
+    background-color: rgb(51, 50, 50);
+}
+
+.container-cadastro .forms form select{
+    width: 100%;
+    height: 60px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+    border: 1.5px solid lightgray;
+}
+
+.container-cadastro .forms form .links a{
+    margin-top: 2rem;
+    color: gray;
+    display: flex;
+    justify-content:center;
+    font-weight: 0;
+    font-size: 1.4rem;
+}
+
+.container-cadastro .forms form input{
+    border: 1.5px solid lightgray;
+}
+.container-cadastro .forms form label{
+    margin-top: 1rem;
+}
+
+

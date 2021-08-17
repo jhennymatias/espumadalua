@@ -1,0 +1,69 @@
+.body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+.container-login{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E2D8F6;
+}
+
+.container-login .img-login {
+    max-height: 100vh;
+    width: 50%;
+}
+
+.container-login .forms{
+    background-color: #E2D8F6;
+    width: 45%;
+    height: 100vh;
+    margin-right: 0;
+    margin-left: 3rem;
+}
+
+.container-login .forms h1{
+    color: black;
+    display:flex;
+    justify-content: center;
+    font-size: 3.2rem;
+}
+
+.container-login .forms form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 20%;
+}
+
+.container-login .forms form input{
+    margin-bottom: 1rem;
+}
+
+.container-login .forms form  .btn-enviar{
+    background-color: black;
+    color: white;
+}
+.container-login .forms form  .btn-enviar:hover{
+    background-color: rgb(51, 50, 50);
+}
+
+.container-login .forms form .links{
+    margin-top: 10rem;
+}
+.container-login .forms form a{
+    color: gray;
+    display: flex;
+    justify-content:center;
+    font-weight: 0;
+    font-size: 1.4rem;
+}
+
