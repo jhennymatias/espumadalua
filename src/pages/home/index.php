@@ -67,11 +67,11 @@
                     </label>
                     <label>
                         Email:
-                        <input type="email" required>
+                        <input type="email" placeholder="email@email.com" required>
                     </label>
                     <label>
                         Telefone
-                        <input type="text">
+                        <input type="text" placeholder="(99) 99999-9999">
                     </label>
                     <label>
                         Mensagem:

@@ -1,3 +1,12 @@
+<?php
+    include_once("../../services/connection.php");
+
+    $conn           = connect();
+    $query          = $conn->query( "SELECT * FROM genero");
+    error_reporting(0);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -12,26 +21,36 @@
     <body>
         <div class="container-cadastro"> 
             <div class="forms">
-                <form>
+                <form action="../../php/cadastro.php" method="POST">
                 <h1> CADASTRO </h1>
+                    <?php 
+                        if ($_GET['mensagem']){
+                        ?>      <p class="alert-error"><?php echo($_GET['mensagem']); ?>  </p>
+                    <?php } ?>
                     <label>
                         Nome:
-                        <input type="text" required>
+                        <input name="nome" type="text" required>
                     </label>
+                            
                     <label> Gênero:
-                        <select value="1">
+                        <select name="genero" value="1">
                             <option value="">Selecione</option>
-                            <option value="Feminino">Feminino</option>
-                            <option value="Masculino">Masculino</option>
+                            <?php 
+
+                                while($dados =$query->fetch_assoc()){?>
+                                    <option value="<?php echo($dados['cod_genero'])?>"> <?php echo($dados['descricao'])?></option>
+                                <?php 
+                                }
+                            ?>
                         </select>
                     </label>
                     <label>
                         Email:
-                        <input type="email" required>
+                        <input type="email" name="email" required>
                     </label>
                     <label>
                         Senha:
-                        <input type="password" required>
+                        <input type="password" name="senha" required>
                     </label>
                     <input type="submit" value="Criar" class="btn-criar"/>
                     <div class="links">
@@ -40,7 +59,6 @@
                 </form>
             </div>
             <img src="../../assets/login.jpg" class="img-cadastro"/>
-           
         </div>
 
     </body>

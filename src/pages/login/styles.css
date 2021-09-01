@@ -41,11 +41,22 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    margin-top: 20%;
+    margin-top: 15%;
 }
 
 .container-login .forms form input{
     margin-bottom: 1rem;
+}
+
+.container-login .forms form .alert-error{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: lightpink;
+    border: 1px darkred solid;
+    color: darkred;
+    padding: 1rem;
+    border-radius: 12px;
 }
 
 .container-login .forms form  .btn-enviar{

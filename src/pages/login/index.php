@@ -1,3 +1,7 @@
+<?php
+error_reporting(0);
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -14,7 +18,7 @@
             <img src="../../assets/login.jpg" class="img-login"/>
             
             <div class="forms">
-                <form action="../../php/login.php">
+                <form action="../../php/login.php" method="POST">
                 <h1> LOGIN </h1>
                     <label>
                         Email:
@@ -24,6 +28,12 @@
                         Senha:
                         <input type="password" name="senha" required>
                     </label>
+                    
+                    <?php 
+                        if ($_GET['mensagem']){
+                        ?>      <p class="alert-error"><?php echo($_GET['mensagem']); ?>  </p>
+                    <?php } ?>
+
                     <input type="submit" value="Enviar" class="btn-enviar"/>
                     <div class="links">
                         <a href="../esqueci-senha/index.php">Esqueci a minha senha</a>
@@ -35,3 +45,4 @@
 
     </body>
 </html>
+

@@ -1,0 +1,95 @@
+.body{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    margin-left: 0;
+    margin-right: 0;
+
+}
+
+.container-cadastro-produto{
+    width: 100vw;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #E2D8F6;
+}
+
+.container-cadastro-produto .forms{
+    background-color: #E2D8F6;
+    height: 100vh;
+    width: 100%;
+    margin-right: 0;
+    margin-left: 3rem;
+    margin-right: 3rem;
+}
+
+.container-cadastro-produto .forms h1{
+    color: black;
+    display:flex;
+    justify-content: center;
+    font-size: 3.2rem;
+}
+
+.container-cadastro-produto .forms form{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+}
+
+.container-cadastro-produto .forms form .coluna_1{
+    flex-direction: column;
+    display: flex;
+    width: 100%;
+    margin-right:3rem ;
+}
+
+.container-cadastro-produto .forms form .coluna_2{
+    flex-direction: column;
+    width: 100%;
+    display: flex;
+    margin-top: 6.5rem;
+}
+
+.container-cadastro-produto .forms form input, .container-cadastro-produto .forms form select{
+    margin-bottom: 2rem;
+}
+
+.container-cadastro-produto .forms form .btn-criar{
+    background-color: black;
+    color: white;
+}
+
+.container-cadastro-produto .forms form .btn-criar:hover{
+    background-color: rgb(51, 50, 50);
+}
+
+.container-cadastro-produto .forms form select{
+    width: 100%;
+    height: 60px;
+    color: #333;
+    border: 1px solid #dcdce6;
+    border-radius: 8px;
+    padding: 0 24px;
+    border: 1.5px solid lightgray;
+}
+
+.container-cadastro-produto .forms form .links a{
+    margin-top: 2rem;
+    color: gray;
+    display: flex;
+    justify-content:center;
+    font-weight: 0;
+    font-size: 1.4rem;
+}
+
+.container-cadastro-produto .forms form input{
+    border: 1.5px solid lightgray;
+}
+.container-cadastro-produto .forms form label{
+    margin-top: 1rem;
+}
+
+
