@@ -9,6 +9,10 @@
     justify-content: center;
 }
 
+.container-produtos{
+    height: 100vh;
+   
+}
 .container-produtos .header nav{
     background-color: black;
     color: white;
@@ -53,6 +57,7 @@
 .container-produtos .todos-produtos{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 100vh - 5rem;    
 }
 .container-produtos .todos-produtos .produto{
     display: flex;
@@ -74,7 +79,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;    
+    margin-top: 1rem; 
 }
 .container-produtos .todos-produtos .produto img{
     height: 25rem;

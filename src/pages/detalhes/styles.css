@@ -49,7 +49,6 @@
 
 .container-produto .produto-header{
     display: flex;
-    justify-content: space-between;
     margin: 7rem
 }
 

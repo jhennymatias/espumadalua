@@ -1,3 +1,18 @@
+<?php
+    include_once("../../services/connection.php");
+    
+    $id             = $_GET['id'];
+    $conn           = connect();
+    $query          = $conn->query("SELECT * FROM produto where cod_produto='$id'");
+    $produto        = $query->fetch_assoc();
+    $url            = $produto['link_shopee'];
+    $url_whatsapp   = "https://api.whatsapp.com/send?phone=5548991340393&text=Ooi%2C%20encontrei%20o%20produto%20X%20no%20seu%20site%20e%20tenho%20interesse!" 
+    //$name           = $conn->query("SELECT * FROM tipo_produto where cod_tipo_produto='$id'");
+    //$nome_tipo      = $name->fetch_assoc();
+    //error_reporting(0);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -15,8 +30,8 @@
                 <nav class="menu">
                     <img src="../../assets/logo.png" class="logo"/>
                     <div class="itens">
-                        <a href="#">SABONETES</a>
-                        <a href="#">HIDRATANTES</a>
+                        <a href="http://localhost/espuma/src/pages/produtos/index.php?id=1">SABONETES</a>
+                        <a href="http://localhost/espuma/src/pages/produtos/index.php?id=2">MANTEIGA CORPORAL</a>
                         <a href="#">OLÉOS</a>
                         <a href='../login/index.php'>SAIR</a>
                     </div>
@@ -26,21 +41,15 @@
             <div class="produto-header">
                 <img src="../../assets/teste.jpg" class="item"/>
                 <div class="descricao">
-                    <h1 class="titulo"> SABONETE DE CACAU </h1>
+                    <h1 class="titulo"> <?php echo($produto['nome']) ?> </h1>
 
                     <p class='desc'> DESCRIÇÃO: </p>
-                    <p class="detalhes">is simply dummy text of the printing and typesetting industry. 
-                        Lorem Ipsum has been the industry's standard dummy text ever 
-                        since the 1500s, when an unknown printer took a galley of type 
-                        and scrambled it to make a type specimen book. It has survived not 
-                        only five centuries.Lorem Ipsum has been the industry's standard dummy text ever 
-                        since the 1500s, when an unknown printer took a galley of type 
-                    </p>
+                    <p class="detalhes"><?php echo($produto['descricao']) ?></p>
                     <div class="row-final">
-                        <p class="preco">R$ 6,00 </p>
+                        <p class="preco">R$ <?php echo($produto['preco']) ?></p>
                         <div class="rede-sociais">
-                            <p>I</p>
-                            <p>W</p>
+                            <p> <a href="<?php echo($url) ?>">Shopee</a></p>
+                            <p>><a href="<?php echo($url_whatsapp) ?>">whatsapp</p>
                         </div>
                     </div>
                     
@@ -49,11 +58,7 @@
 
             <div class="beneficios">
                 <p class="ben">BENEFICIOS</p>
-                <p>is simply dummy text of the printing and typesetting industry.
-                    Lorem Ipsum has been the industry's standard dummy text ever
-                    since the 1500s, when an unknown printer took a galley of type 
-                    and scrambled it to make a type specimen book. It has survived 
-                    not only five centuries,
+                <p><?php echo($produto['beneficio']) ?>
                 </p>
             </div>
 

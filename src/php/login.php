@@ -27,7 +27,7 @@ try{
     $senha = $_POST["senha"];
     $usuario = array_reverse(queryClient($conn, $login, $senha)); 
     $conn->close();    
-    header('Location: ../pages/produtos/index.php');
+    header('Location: ../pages/produtos/index.php?id=1');
 }catch(Exception $e) {
     echo("<p>($e->getMessage())</p>");
     header('Location: ../pages/login/index.php?mensagem=Informações incorretas');
