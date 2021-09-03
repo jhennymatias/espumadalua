@@ -1,6 +1,6 @@
 <?php   
-
 include_once("../services/connection.php");
+session_start();
 
 function queryClient($conn, $login, $senha) {
 
@@ -10,6 +10,13 @@ function queryClient($conn, $login, $senha) {
         throw new Exception('Erro ao realizar login');
     }else{
         if(crypt($senha, ($data['senha'])) == $data['senha']){
+            $_SESSION['cod_usuario'] = $data['cod_usuario'];
+            $_SESSION['nome_usuario'] = $data['nome']; 
+            $_SESSION['tipo_usuario']  = $data['tipo_usuario'];
+            echo($_SESSION['tipo_usuario']);
+            if($_SESSION['tipo_usuario'] == 1){
+                header('Location: ../pages/admin/index.php');
+            }
             return $data;
         }else{
             throw new Exception('Senha Inválida');
@@ -32,8 +39,6 @@ try{
     echo("<p>($e->getMessage())</p>");
     header('Location: ../pages/login/index.php?mensagem=Informações incorretas');
 }
-
-
 
 
 ?>

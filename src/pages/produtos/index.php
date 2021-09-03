@@ -1,13 +1,17 @@
 <?php
     include_once("../../services/connection.php");
+    session_start();
+    if(isset($_SESSION['cod_usuario'])){
+        $id             = $_GET['id'];
+        $conn           = connect();
+        $query          = $conn->query("SELECT * FROM produto where tipo_produto='$id'");
+        $name           = $conn->query("SELECT * FROM tipo_produto where cod_tipo_produto='$id'");
+        $nome_tipo      = $name->fetch_assoc();    
+    }else{
+        header('Location: ../login/index.php');
+    }
     
-    $id             = $_GET['id'];
-    $conn           = connect();
-    $query          = $conn->query("SELECT * FROM produto where tipo_produto='$id'");
-    $name           = $conn->query("SELECT * FROM tipo_produto where cod_tipo_produto='$id'");
-    $nome_tipo      = $name->fetch_assoc();
     //error_reporting(0);
-
 ?>
 
 <!DOCTYPE html>
@@ -26,14 +30,17 @@
             <div class="header">
                 <nav class="menu">
                     <img src="../../assets/logo.png" class="logo"/>
+                    <p> Bem-Vinda <?php echo($_SESSION['nome_usuario'])?></p>
+           
                     <div class="itens">
                         <a href="http://localhost/espuma/src/pages/produtos/index.php?id=1">SABONETES</a>
                         <a href="http://localhost/espuma/src/pages/produtos/index.php?id=2">MANTEIGA CORPORAL</a>
-                        <a href="#">OLÉOS</a>
-                        <a href='../login/index.php'>SAIR</a>
+                        <a href="http://localhost/espuma/src/pages/produtos/index.php?id=3">HIDRATANTE LABIAL</a>
+                        <a href='../../php/sair.php'>SAIR</a>
                     </div>
                 </nav>
             </div>
+
             <h1 class="titulo"><?php echo($nome_tipo['descricao']); ?></h1>
             <div class="todos-produtos">
                 <?php
@@ -45,7 +52,7 @@
 
                     <a href= <?php echo($url) ?>>
                     <div class="produto">
-                        <img src="../../assets/cacau.jpg" class="item"/>
+                        <img src="<?php echo($dados['foto']); ?>" class="item"/>
                         <div class="descricao">
                             <p> <?php echo($dados['nome']); ?></p>
                             <p> R$ <?php echo($dados['preco']); ?></p>

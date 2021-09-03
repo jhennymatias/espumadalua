@@ -1,3 +1,12 @@
+<?php
+    include_once("../../services/connection.php");
+
+    $conn           = connect();
+    $query          = $conn->query( "SELECT * FROM tipo_produto");
+    error_reporting(0);
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -11,41 +20,72 @@
     </head>
     <body>
         <div class="container-cadastro-produto"> 
-            <div class="forms">
-                <form>
-                <div class="coluna_1">
-                    <h1>CADASTRO DE PRODUTO</h1>
-                    <label>
-                        Nome:
-                        <input type="text" required>
-                    </label>
-                    <label> Produto:
-                        <select value="1">
-                            <option value="">Selecione</option>
-                            <option value="Oleo">Oleo</option>
-                            <option value="Hidratante">Hidratante</option>
-                            <option value="Sabonete">Sabonete</option>
-                        </select>
-                    </label>
-                    <label>
-                        Beneficios:
-                        <textarea type="text" required></textarea>
-                    </label>
-                </div>
-                <div class="coluna_2">
-                    <label>
-                        Descricao:
-                        <textarea type="text" required></textarea>
-                    </label>
-                    <label>
-                        Foto:
-                        <input type="file" required>
-                    </label>
-                    <input type="submit" value="Criar" class="btn-criar"/>
-                    <div class="links">
-                        <a href="../produtos/index.php">Voltar</a>
+            <div class="header">
+                <nav class="menu">
+                    <img src="../../assets/logo.png" class="logo"/>
+                    <div class="itens">
+                        <a href="../admin">INICIO</a>
+                        <a href="../cliente">CLIENTES</a>
+                        <a href="../new-product">CADASTRO DE PRODUTOS</a>
+                        <a href='../../php/sair.php'>SAIR</a>
                     </div>
-                </div>    
+                </nav>
+            </div>
+            <div class="forms">
+                <form  action="../../php/cadastro_produto.php" method="POST" enctype="multipart/form-data">
+                <h1>CADASTRO DE PRODUTO</h1>
+                <div class="content-forms">
+                    
+                    <div class="coluna_1">
+                        
+                        <label>
+                            Nome:
+                            <input type="text" name="nome" required>
+                        </label>
+                        <label> Produto:
+                            <select value="1" name="tipo_produto">
+                                <option value="">Selecione</option>
+                                <?php
+                                    while($dados =$query->fetch_assoc()){?>
+                                        <option value="<?php echo($dados['cod_tipo_produto'])?>"> <?php echo($dados['descricao'])?></option>
+                                    <?php 
+                                    }
+                                ?>
+                            </select>
+                        </label>
+                        <label>
+                            Link da Shopee:
+                            <input type="text" name="link_shopee" required>
+                        </label>
+                    
+                        <label>
+                                Preco:
+                                <input type="text" name="preco" required>
+                        </label>
+                        
+                        <div class="links">
+                            
+                        </div>
+                    </div>
+                    <div class="coluna_2">
+                        <label>
+                            Beneficios:
+                            <textarea type="text" name="beneficios" required></textarea>
+                        </label>
+                        <label>
+                            Descrição:
+                            <textarea name="descricao" type="text" required></textarea>
+                        </label>
+                        <label>
+                            Foto:
+                            <input type="file" name="file" id="file" required>
+                        </label>
+                        
+                        
+                        
+                    </div> 
+                </div>   
+                <input type="submit" value="Criar" class="btn-criar"/>
                 </form>
             </div>
            

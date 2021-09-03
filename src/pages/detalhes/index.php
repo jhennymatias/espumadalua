@@ -1,16 +1,19 @@
 <?php
     include_once("../../services/connection.php");
-    
-    $id             = $_GET['id'];
-    $conn           = connect();
-    $query          = $conn->query("SELECT * FROM produto where cod_produto='$id'");
-    $produto        = $query->fetch_assoc();
-    $url            = $produto['link_shopee'];
-    $url_whatsapp   = "https://api.whatsapp.com/send?phone=5548991340393&text=Ooi%2C%20encontrei%20o%20produto%20X%20no%20seu%20site%20e%20tenho%20interesse!" 
-    //$name           = $conn->query("SELECT * FROM tipo_produto where cod_tipo_produto='$id'");
-    //$nome_tipo      = $name->fetch_assoc();
-    //error_reporting(0);
-
+    session_start();
+    if(isset($_SESSION['cod_usuario'])){
+        $id             = $_GET['id'];
+        $conn           = connect();
+        $query          = $conn->query("SELECT * FROM produto where cod_produto='$id'");
+        $produto        = $query->fetch_assoc();
+        $url            = $produto['link_shopee'];
+        $url_whatsapp   = "https://api.whatsapp.com/send?phone=5548991340393&text=Ooi%2C%20encontrei%20o%20produto%20X%20no%20seu%20site%20e%20tenho%20interesse!"; 
+        //$name           = $conn->query("SELECT * FROM tipo_produto where cod_tipo_produto='$id'");
+        //$nome_tipo      = $name->fetch_assoc();
+        //error_reporting(0);
+    }else{
+        header('Location: ../login/index.php');
+    }
 ?>
 
 <!DOCTYPE html>
@@ -32,14 +35,14 @@
                     <div class="itens">
                         <a href="http://localhost/espuma/src/pages/produtos/index.php?id=1">SABONETES</a>
                         <a href="http://localhost/espuma/src/pages/produtos/index.php?id=2">MANTEIGA CORPORAL</a>
-                        <a href="#">OLÉOS</a>
-                        <a href='../login/index.php'>SAIR</a>
+                        <a href="http://localhost/espuma/src/pages/produtos/index.php?id=3">HIDRATANTE LABIAL</a>
+                        <a href='../../php/sair.php'>SAIR</a>
                     </div>
                 </nav>
             </div>
 
             <div class="produto-header">
-                <img src="../../assets/teste.jpg" class="item"/>
+                <img src="<?php echo($produto['foto']) ?>" class="item"/>
                 <div class="descricao">
                     <h1 class="titulo"> <?php echo($produto['nome']) ?> </h1>
 
@@ -48,8 +51,8 @@
                     <div class="row-final">
                         <p class="preco">R$ <?php echo($produto['preco']) ?></p>
                         <div class="rede-sociais">
-                            <p> <a href="<?php echo($url) ?>">Shopee</a></p>
-                            <p>><a href="<?php echo($url_whatsapp) ?>">whatsapp</p>
+                            <p><a href="<?php echo($url) ?>"><img src="../../assets/shopee.png" class="redes"/></a></p>
+                            <p><a href="<?php echo($url_whatsapp) ?>"><img src="../../assets/whatsapp.png" class="redes"/></a></p>
                         </div>
                     </div>
                     

@@ -91,6 +91,11 @@
     margin-right: 2rem;
 }
 
+.container-produto .produto-header .descricao .row-final .rede-sociais .redes{
+    height: 7rem;
+    width: 7rem;
+}
+
 .container-produto .produto-header .descricao .row-final .rede-sociais p+p{
     margin-left: 2rem;
 }
