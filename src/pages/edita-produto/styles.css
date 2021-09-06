@@ -5,7 +5,7 @@
     background-color: #E2D8F6;
 }
 
-.container-cadastro-produto{
+.container-edita-produto{
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -14,39 +14,39 @@
     padding-bottom: 5rem;
 }
 
-.container-cadastro-produto .header nav{
+.container-edita-produto .header nav{
     background-color: black;
     color: white;
     width: 98.7vw;
     height: 7rem;
 }
 
-.container-cadastro-produto .header nav {
+.container-edita-produto .header nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-.container-cadastro-produto .header nav img{
+.container-edita-produto .header nav img{
     height: 6rem;
     width: 6rem;
     margin-left: 3rem;
 }
 
-.container-cadastro-produto .header nav .itens a{
+.container-edita-produto .header nav .itens a{
     text-decoration: none;
     color: white;
     margin-left: 1rem;
 }
 
-.container-cadastro-produto .header nav .itens a+a+a+a{
+.container-edita-produto .header nav .itens a+a+a{
     margin-right: 3rem;
 }
 
 
 
-.container-cadastro-produto .forms{
+.container-edita-produto .forms{
     
     height: 100vh;
     width: 90%;
@@ -56,7 +56,7 @@
 
 }
 
-.container-cadastro-produto .forms h1{
+.container-edita-produto .forms h1{
     color: black;
     display:flex;
     justify-content: center;
@@ -64,39 +64,39 @@
     margin-top: 5rem;
 }
 
-.container-cadastro-produto .forms .content-forms{
+.container-edita-produto .forms .content-forms{
     display: flex;
     justify-content: space-between;
     margin-top: 3rem;
 }
 
-.container-cadastro-produto .forms form .coluna_1{
+.container-edita-produto .forms form .coluna_1{
     flex-direction: column;
     display: flex;
     width: 100%;
     margin-right:3rem ;
 }
 
-.container-cadastro-produto .forms form .coluna_2{
+.container-edita-produto .forms form .coluna_2{
     flex-direction: column;
     width: 100%;
     display: flex;
 }
 
-.container-cadastro-produto .forms form input, .container-cadastro-produto .forms form select{
+.container-edita-produto .forms form input, .container-edita-produto .forms form select{
     margin-bottom: 2rem;
 }
 
-.container-cadastro-produto .forms form .btn-criar{
+.container-edita-produto .forms form .btn-criar{
     background-color: black;
     color: white;
 }
 
-.container-cadastro-produto .forms form .btn-criar:hover{
+.container-edita-produto .forms form .btn-criar:hover{
     background-color: rgb(51, 50, 50);
 }
 
-.container-cadastro-produto .forms form select{
+.container-edita-produto .forms form select{
     width: 100%;
     height: 60px;
     color: #333;
@@ -106,15 +106,15 @@
     border: 1.5px solid lightgray;
 }
 
-.container-cadastro-produto .forms form .links{
+.container-edita-produto .forms form .links{
     display: flex;
     flex-direction: row;
 }
 
-.container-cadastro-produto .forms form .links input{
+.container-edita-produto .forms form .links input{
     width: 50%;
 }
-.container-cadastro-produto .forms form .links a{
+.container-edita-produto .forms form .links a{
     margin-top: 2rem;
     color: gray;
     display: flex;
@@ -123,11 +123,13 @@
     font-size: 1.4rem;
 }
 
-.container-cadastro-produto .forms form input{
+.container-edita-produto .forms form input{
     border: 1.5px solid lightgray;
 }
-.container-cadastro-produto .forms form label{
+.container-edita-produto .forms form label{
     margin-top: 1rem;
 }
 
-
+.container-edita-produto .forms form img+input{
+    width: 100%;
+}

@@ -1,7 +1,7 @@
 <?php
     include_once("../../services/connection.php");
     session_start();
-    if(isset($_SESSION['cod_usuario'])){
+    if(isset($_SESSION['cod_usuario']) and ($_SESSION['tipo_usuario'] == 1)  ){
         $conn           = connect();
         $query          = $conn->query("SELECT count(*) as users FROM usuario ");
         $dados =$query->fetch_assoc();
@@ -44,6 +44,7 @@
                         <a href="../admin">INICIO</a>
                         <a href="../cliente">CLIENTES</a>
                         <a href="../new-product">CADASTRO DE PRODUTOS</a>
+                        <a href="../lista-produto">EDITAR E EXCLUIR PRODUTOS</a>
                         <a href='../../php/sair.php'>SAIR</a>
                     </div>
                 </nav>
@@ -76,9 +77,11 @@
                 </div>
             </div>
           
-        
+            
             
         </div>
-
+        <footer>
+            Desenvolvido por Jhennifer Matias
+        </footer>
     </body>
 </html>

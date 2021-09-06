@@ -13,10 +13,6 @@ function queryClient($conn, $login, $senha) {
             $_SESSION['cod_usuario'] = $data['cod_usuario'];
             $_SESSION['nome_usuario'] = $data['nome']; 
             $_SESSION['tipo_usuario']  = $data['tipo_usuario'];
-            echo($_SESSION['tipo_usuario']);
-            if($_SESSION['tipo_usuario'] == 1){
-                header('Location: ../pages/admin/index.php');
-            }
             return $data;
         }else{
             throw new Exception('Senha Inválida');

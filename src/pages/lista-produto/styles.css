@@ -9,86 +9,89 @@
     justify-content: center;
 }
 
-.container-produtos{
+.container-lista-produtos{
     height: 100vh;
    
 }
-.container-produtos .header nav{
+.container-lista-produtos .header nav{
     background-color: black;
     color: white;
     max-width: 100%;
     height: 7rem;
 }
 
-.container-produtos .header nav {
+.container-lista-produtos .header nav {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
 
-.container-produtos .header nav img{
+.container-lista-produtos .header nav img{
     height: 6rem;
     width: 6rem;
     margin-left: 3rem;
 }
 
-.container-produtos .header nav .itens a{
+.container-lista-produtos .header nav .itens a{
     text-decoration: none;
     color: white;
     margin-left: 1rem;
 }
 
-.container-produtos .header nav .itens a+a+a+a{
+.container-lista-produtos .header nav .itens a+a+a+a{
     margin-right: 3rem;
 }
 
 
-.container-produtos .tabela{
+.container-lista-produtos .tabela{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-top: 2rem;
     margin-bottom: 5rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    
+
 }
 
-.container-produtos .tabela h1{
+.container-lista-produtos .tabela  h1{
     margin-bottom: 2rem;
 }
 
-.container-produtos .tabela table{
+.container-lista-produtos .tabela table{
     border-radius: 12px;
     border: 1px rgb(80, 80, 80) solid;
 
 }
 
-.container-produtos .tabela td{
+.container-lista-produtos .tabela td{
     width: 30rem;
     
     
 }
 
-.container-produtos .tabela td a{
+.container-lista-produtos .tabela td a{
     color: black;
 }
 
-.container-produtos .tabela td a:hover{
+.container-lista-produtos .tabela td a:hover{
     color: purple;  
 }
 
-.container-produtos .tabela table tr:first-child{
+.container-lista-produtos .tabela table tr:first-child{
     background: black;
     color: white;
     font-size: 1.5rem;
 }
 
-.container-produtos .tabela table tr:hover{
+.container-lista-produtos .tabela table tr:hover{
     background-color: lightgray;
 }
-.container-produtos .tabela table td{
+.container-lista-produtos .tabela table td{
     height: 3rem;
     padding: 1rem;
 }
-
 
