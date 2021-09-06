@@ -1,5 +1,6 @@
 <?php
     include_once("../../services/connection.php");
+    error_reporting(0);
     session_start();
     if(isset($_SESSION['cod_usuario'])){
         $id             = $_GET['id'];
@@ -7,10 +8,10 @@
         $query          = $conn->query("SELECT * FROM produto where cod_produto='$id'");
         $produto        = $query->fetch_assoc();
         $url            = $produto['link_shopee'];
+        $tipo_produto   = $produto['tipo_produto'];
         $url_whatsapp   = "https://api.whatsapp.com/send?phone=5548991340393&text=Ooi%2C%20encontrei%20o%20produto%20X%20no%20seu%20site%20e%20tenho%20interesse!"; 
-        //$name           = $conn->query("SELECT * FROM tipo_produto where cod_tipo_produto='$id'");
-        //$nome_tipo      = $name->fetch_assoc();
-        //error_reporting(0);
+        $similares          = $conn->query("SELECT *  FROM produto where tipo_produto='$tipo_produto'");
+        
     }else{
         header('Location: ../login/index.php');
     }
@@ -68,42 +69,22 @@
             <div class="similares">
                 <p class="simi">SIMILARES</p>
                 <div class="imagens">
-                    <a href="../detalhes/index.php">
-                        <div class="produto">
-                            <img src="../../assets/cacau.jpg" class="item"/>
-                            <div class="descricao">
-                                <p>Sabonete de Cacau</p>
-                                <p>R$ 6,00 </p>
+                <?php
+                    $contador = 0;
+                    while($similar =$similares->fetch_assoc() or $contador>4){
+                        $contador = $contador + 1;
+                        ?>
+                        <a href="../detalhes/index.php?id=<?php echo($similar['cod_produto']) ?>">
+                            <div class="produto">
+                                <img src="<?php echo($similar['foto']) ?>" class="item"/>
+                                <div class="descricao">
+                                    <p><?php echo($similar['nome']) ?></p>
+                                    <p>R$ <?php echo($similar['preco']) ?> </p>
+                                </div>
                             </div>
-                        </div>
-                    </a>
-                    <a href="../detalhes/index.php">
-                        <div class="produto">
-                            <img src="../../assets/cacau.jpg" class="item"/>
-                            <div class="descricao">
-                                <p>Sabonete de Cacau</p>
-                                <p>R$ 6,00 </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="../detalhes/index.php">
-                        <div class="produto">
-                            <img src="../../assets/cacau.jpg" class="item"/>
-                            <div class="descricao">
-                                <p>Sabonete de Cacau</p>
-                                <p>R$ 6,00 </p>
-                            </div>
-                        </div>
-                    </a>
-                    <a href="../detalhes/index.php">
-                        <div class="produto">
-                            <img src="../../assets/cacau.jpg" class="item"/>
-                            <div class="descricao">
-                                <p>Sabonete de Cacau</p>
-                                <p>R$ 6,00 </p>
-                            </div>
-                        </div>
-                    </a>
+                        </a>
+                    <?php 
+                    } ?>     
                 </div>
             </div>
 

@@ -41,7 +41,7 @@
                         
                         <label>
                             Nome:
-                            <input type="text" name="nome" required>
+                            <input type="text" name="nome" required maxlength="50">
                         </label>
                         <label> Produto:
                             <select value="1" name="tipo_produto">
@@ -56,26 +56,22 @@
                         </label>
                         <label>
                             Link da Shopee:
-                            <input type="text" name="link_shopee" required>
+                            <input maxlength="100" type="text" name="link_shopee" required>
                         </label>
                     
                         <label>
                                 Preco:
-                                <input type="text" name="preco" required>
+                                <input maxlength="9" pattern="([0-9]{1,3}\.)?[0-9]{1,3},[0-9]{2}$" type="text" name="preco" required>
                         </label>
-                        
-                        <div class="links">
-                            
-                        </div>
                     </div>
                     <div class="coluna_2">
                         <label>
                             Beneficios:
-                            <textarea type="text" name="beneficios" required></textarea>
+                            <textarea maxlength="500" type="text" name="beneficios" required></textarea>
                         </label>
                         <label>
                             Descrição:
-                            <textarea name="descricao" type="text" required></textarea>
+                            <textarea name="descricao" maxlength="500" type="text" required></textarea>
                         </label>
                         <label>
                             Foto:

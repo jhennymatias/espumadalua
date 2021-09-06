@@ -38,18 +38,23 @@ try{
     $file = $_FILES['file'];
     $foto = "../../images/" . $file['name'];
     gravar_arquivo($file);
-    $nome = $_POST["nome"];
-    $tipo_produto = $_POST["tipo_produto"];
-    $descricao = $_POST["descricao"];
-    $beneficios = $_POST["beneficios"];
-    $link_shopee = $_POST["link_shopee"];
-    $preco =  $_POST["preco"];   
+
+    $nome = htmlspecialchars($_POST["nome"], ENT_QUOTES, 'UTF-8');
+    $tipo_produto = htmlspecialchars($_POST["tipo_produto"], ENT_QUOTES, 'UTF-8');
+    $descricao = htmlspecialchars($_POST["descricao"], ENT_QUOTES, 'UTF-8');
+    $descricao = nl2br($descricao);
+    
+    $beneficios = htmlspecialchars($_POST["beneficios"], ENT_QUOTES, 'UTF-8');
+    $beneficios = nl2br($beneficios);
+    $link_shopee =  htmlspecialchars($_POST["link_shopee"], ENT_QUOTES, 'UTF-8');
+    $preco =  htmlspecialchars($_POST["preco"], ENT_QUOTES, 'UTF-8');
+   
     queryCadastro($conn, $nome, $tipo_produto, $descricao, $beneficios, $link_shopee, $preco, $foto ); 
     $conn->close();    
     header('Location: ../pages/admin/index.php');
 }catch(Exception $e) {
     echo("<p>($e->getMessage())</p>");
-    //header('Location: ../pages/new-product/index.php?mensagem=Erro ao cadastrar');
+    header('Location: ../pages/new-product/index.php?mensagem=Erro ao cadastrar');
 }
 
 ?>

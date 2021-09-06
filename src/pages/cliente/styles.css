@@ -11,7 +11,7 @@
 
 .container-produtos{
     height: 100vh;
-   
+    background-color: #E2D8F6; 
 }
 .container-produtos .header nav{
     background-color: black;
